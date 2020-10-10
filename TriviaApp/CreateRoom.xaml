@@ -1,0 +1,100 @@
+﻿<Page x:Class="TriviaApp.CreateRoom"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TriviaApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="400"
+      Title="CreateRoom"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <materialDesign:Card Margin="16">
+        <Grid Margin="32">
+            <Button
+                x:Name="BackBTN"
+              Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+              HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+              ToolTip="MaterialDesignFloatingActionMiniButton"
+                Height="32"
+                Width="32" Margin="-20,-20,0,0" Click="BackBTN_Click">
+                <materialDesign:PackIcon
+                Kind="ArrowBack"
+                Height="20"
+                Width="20" />
+            </Button>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="0" Text="Create Room" Style="{StaticResource MaterialDesignHeadline3TextBlock}"></TextBlock>
+                <local:AlignableWrapPanel VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
+                    <TextBox
+                        Name="RoomNameBox"
+                        Width="200"
+                        HorizontalAlignment="Center"
+                        Margin="16"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        Text="{Binding Name}"
+                        materialDesign:HintAssist.Hint="Room name" TextChanged="RoomNameBox_TextChanged"
+                        />
+                    <TextBox
+                        x:Name="MaxPlayersBox"
+                        Width="200"
+                        HorizontalAlignment="Center"
+                        Margin="16"
+                        Text="{Binding Name}"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        PreviewTextInput="NumberValidationTextBox"
+                        materialDesign:HintAssist.Hint="Max players" TextChanged="MaxPlayersBox_TextChanged"
+                    />
+                    <TextBox
+                        Name="QuestionsBox"
+                        Width="200"
+                        HorizontalAlignment="Center"
+                        Margin="16"
+                        Text="{Binding Name}"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        PreviewTextInput="NumberValidationTextBox"
+                        materialDesign:HintAssist.Hint="Number of questions" TextChanged="QuestionsBox_TextChanged"
+                    />
+                    <TextBox
+                        Name="SecondsBox"
+                        Width="200"
+                        HorizontalAlignment="Center"
+                        Margin="16"
+                        Text="{Binding Name}"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        PreviewTextInput="NumberValidationTextBox"
+                        materialDesign:HintAssist.Hint="Seconds for question" TextChanged="SecondsBox_TextChanged"
+                    />
+                </local:AlignableWrapPanel>
+                <Button
+                    Name="CreateBTN"
+                    Margin="16"
+                        Grid.Row="2"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Content="Create"
+                        Width="100"
+                        ToolTip="MaterialDesignOutlinedButton" Click="CreateBTN_Click"
+                        >
+                </Button>
+
+            </Grid>
+        </Grid>
+        
+
+    </materialDesign:Card>
+
+</Page>
+

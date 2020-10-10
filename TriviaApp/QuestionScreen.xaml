@@ -1,0 +1,98 @@
+﻿<Page x:Class="TriviaApp.QuestionScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TriviaApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="450"
+      Title="QuestionScreen"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <materialDesign:Card Margin="16">
+        <Grid Margin="32">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="141*"/>
+                <RowDefinition Height="35*"/>
+            </Grid.RowDefinitions>
+            <Button
+                x:Name="BackBTN"
+              Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+              HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+              ToolTip="MaterialDesignFloatingActionMiniButton"
+                Height="32"
+                Width="32" Margin="-20,-20,0,0" Click="BackBTN_Click">
+                <materialDesign:PackIcon
+                Kind="ArrowBack"
+                Height="20"
+                Width="20" />
+            </Button>
+            <TextBlock x:Name="TimeLeftTXT" Width="100" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Center" Grid.Row="0" Style="{StaticResource MaterialDesignHeadline5TextBlock}"></TextBlock>
+            <TextBlock Name="QuestionsCountTXT" Width="100" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center" Grid.Row="0" Style="{StaticResource MaterialDesignHeadline5TextBlock}"></TextBlock>
+            <TextBlock Name="ScoreTXT" Width="100" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Right" TextAlignment="Center" Grid.Row="0" Style="{StaticResource MaterialDesignHeadline5TextBlock}"></TextBlock>
+            <TextBlock Width="100" Margin="0,32,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Center" Grid.Row="0" Style="{StaticResource MaterialDesignHeadline5TextBlock}">Seconds</TextBlock>
+            <TextBlock Margin="0,32,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center" Grid.Row="0" Style="{StaticResource MaterialDesignHeadline5TextBlock}">Questions</TextBlock>
+            <TextBlock Width="100" Margin="0,32,0,0" VerticalAlignment="Top" HorizontalAlignment="Right" TextAlignment="Center" Grid.Row="0" Style="{StaticResource MaterialDesignHeadline5TextBlock}">Score</TextBlock>
+
+            <Grid Grid.RowSpan="2" Margin="0,128,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="questionTXT" VerticalAlignment="Top" HorizontalAlignment="Center"  Grid.Row="0" Text="" Style="{StaticResource MaterialDesignHeadline5TextBlock}"></TextBlock>
+                <local:AlignableWrapPanel VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Grid.Row="1">
+                    <Button
+                        
+                        
+                        Name="Answer1BTN"
+                        Height="40"
+                        Width="300"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        
+                        Margin="16,16"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Click="Answer1BTN_Click">
+                        
+                    </Button>
+                    <Button
+                        Name="Answer2BTN"
+                        Height="40"
+                        Width="300"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Margin="16,16"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Click="Answer2BTN_Click">
+                        
+                    </Button>
+                    <Button
+                        Name="Answer3BTN"
+                        Height="40"
+                        Width="300"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Margin="16,16"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Click="Answer3BTN_Click">
+                        
+                    </Button>
+                    <Button
+                        Name="Answer4BTN"
+                        Height="40"
+                        Width="300"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Margin="16,16"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Click="Answer4BTN_Click">
+                        
+                    </Button>
+                </local:AlignableWrapPanel>
+            </Grid>
+        </Grid>
+
+
+    </materialDesign:Card>
+
+</Page>

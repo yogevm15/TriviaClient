@@ -1,0 +1,93 @@
+﻿<Page x:Class="TriviaApp.Signup"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TriviaApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Signup"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <materialDesign:Card Padding="32" Margin="16">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon Grid.Column="0" Kind="Account" Width="Auto" Height="Auto" VerticalAlignment="Center"/>
+                <TextBox
+                    Grid.Column="2"
+                    Name="EmailBox"
+                    materialDesign:HintAssist.Hint="Enter Email"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="EmailBox_TextChanged"
+                    Text="{Binding Name}">
+                </TextBox>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon Grid.Column="0" Kind="Account" Width="Auto" Height="Auto" VerticalAlignment="Center"/>
+                <TextBox
+                    Grid.Column="2"
+                    Name="UsernameBox"
+                    materialDesign:HintAssist.Hint="Enter Username"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="UsernameBox_TextChanged"
+                    Text="{Binding Name}">
+                </TextBox>
+            </Grid>
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon Grid.Column="0" Kind="Key" Width="Auto" Height="Auto" VerticalAlignment="Center"/>
+                <PasswordBox
+                    Grid.Column="2"
+                    x:Name="PasswordBox"
+                    materialDesign:HintAssist.Hint="Enter Password"
+                    materialDesign:HintAssist.HelperText=""
+                    materialDesign:TextFieldAssist.HasClearButton="True"
+                    Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                    DataContext="{Binding Password}" PasswordChanged="PasswordBox_PasswordChanged">
+                </PasswordBox>
+            </Grid>
+
+            <Button
+                Grid.Row="8"
+                Style="{StaticResource MaterialDesignOutlinedButton}"
+                Content="Sign Up"
+                Width="100"
+                ToolTip="MaterialDesignOutlinedButton"
+                Click="SignupBTN">
+            </Button>
+        </Grid>
+
+    </materialDesign:Card>
+</Page>
